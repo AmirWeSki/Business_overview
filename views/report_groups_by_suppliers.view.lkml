@@ -73,4 +73,10 @@ view: report_groups_by_suppliers {
     type: sum
     sql:${num_billed_groups} ;;
   }
+
+  measure: search_to_bill_rate {
+    type: number
+    sql: CASE WHEN ${num_results_measure} != 0 THEN ${num_billed_groups_measure} / ${num_results_measure} ELSE NULL END ;;
+    value_format_name: percent_2
+  }
 }
