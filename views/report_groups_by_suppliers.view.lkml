@@ -74,4 +74,22 @@ view: report_groups_by_suppliers {
     sql:${num_billed_groups} ;;
   }
 
+  measure: seach_to_bill {
+    type: number
+    sql:sum(${num_billed_groups_measure})/sum(${num_results_measure} ;;
+  }
+
+  measure: num_results_wow_change_percent {
+    type: number
+    sql: (${num_results_measure} - lag(${num_results_measure}, 1)) / nullif(lag(${num_results_measure}, 1), 0) ;;
+    description: "Week-over-week percentage change in num results"
+  }
+
+  measure: formatted_num_results {
+    type: string
+    sql: concat(${num_results}, " WoW(", round(${num_results_wow_change_percent} * 100, 2), "%)") ;;
+    description: "Formatted number of results with WoW change"
+  }
+
+
 }
