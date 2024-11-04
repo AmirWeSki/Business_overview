@@ -85,6 +85,15 @@ view: report_groups_by_suppliers {
     description: "Week-over-week percentage change in num results"
   }
 
+
+  measure: num_results_wow_change {
+    type: number
+    sql:
+    SUM(${num_results_measure})
+    - LAG(SUM(${num_results_measure}), 1) OVER (ORDER BY ${search_week}) ;;
+    description: "Week-over-week change in num results"
+  }
+
   measure: formatted_num_results {
     type: string
     sql: concat(${num_results}, " WoW(", round(${num_results_wow_change_percent} * 100, 2), "%)") ;;
