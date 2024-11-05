@@ -98,6 +98,7 @@ view: report_groups_by_suppliers {
       TO_CHAR(${num_results_measure}, 'FM999,999,999'),  -- Format with commas
       ', WoW ',
       CAST(ROUND(${wow_results_by_name} * 100, 0) AS STRING)  -- Convert to percentage
+      ,'%')
   ) ;;
   }
 
