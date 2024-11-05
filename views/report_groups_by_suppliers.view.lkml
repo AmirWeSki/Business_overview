@@ -90,4 +90,10 @@ view: report_groups_by_suppliers {
     value_format_name: "percent_2"
   }
 
+  measure: num_results_with_wow {
+    type: string
+    sql: CONCAT(CAST(${num_results_measure} AS STRING), ' WoW ',
+      CAST(${wow_results_by_name} AS STRING)) ;;
+  }
+
 }
