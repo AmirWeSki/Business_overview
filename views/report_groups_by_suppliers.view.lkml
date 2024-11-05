@@ -100,8 +100,8 @@ view: report_groups_by_suppliers {
 
   measure: Search_to_GBV {
     type: number
-    sql:sum(${REVENUE_USD})/sum(${num_results_measure}) ;;
-  }
+    sql:sum(${REVENUE_USD_measure})/sum(${num_results_measure}) ;;
+    }
 
 
 
