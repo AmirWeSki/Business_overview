@@ -93,17 +93,6 @@ view: report_groups_by_suppliers {
   }
 
 
-  measure: seach_to_bill {
-    type: number
-    sql:sum(${num_billed_groups_measure})/sum(${num_results_measure}) ;;
-  }
-
-  measure: Search_to_GBV {
-    type: number
-    sql:sum(${REVENUE_USD_measure})/sum(${num_results_measure}) ;;
-    }
-
-
 
 # WoW Change Measure by supplier name
   measure: wow_results_by_name {
