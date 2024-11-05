@@ -76,7 +76,7 @@ view: report_groups_by_suppliers {
 
   measure: seach_to_bill {
     type: number
-    sql:sum(${num_billed_groups_measure})/sum(${num_results_measure} ;;
+    sql:sum(${num_billed_groups_measure})/sum(${num_results_measure}) ;;
   }
 
 
@@ -84,9 +84,9 @@ view: report_groups_by_suppliers {
   measure: wow_results_by_name {
     type: number
     sql:
-    (SUM(${num_results_measure}) -
-    LAG(SUM(${num_results_measure}), 1) OVER (PARTITION BY ${name} ORDER BY ${search_week}))
-    ) / NULLIF(LAG(SUM(${num_results_measure}), 1) OVER (PARTITION BY ${name} ORDER BY ${search_week}), 0) ;;
+    (${num_results_measure} -
+    LAG(${num_results_measure}, 1) OVER (PARTITION BY ${name} ORDER BY ${search_week}))
+     / NULLIF(LAG(${num_results_measure}, 1) OVER (PARTITION BY ${name} ORDER BY ${search_week}), 0) ;;
     value_format_name: "percent_2"
   }
 
