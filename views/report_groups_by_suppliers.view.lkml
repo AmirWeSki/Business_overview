@@ -43,6 +43,14 @@ view: report_groups_by_suppliers {
     type: number
     sql: ${TABLE}."NUM_RESULTS" ;;
   }
+  dimension: GBV_USD {
+    type: number
+    sql: ${TABLE}."GBV_USD" ;;
+  }
+  dimension: REVENUE_USD {
+    type: number
+    sql: ${TABLE}."REVENUE_USD" ;;
+  }
   dimension: origin_airport {
     type: string
     sql: ${TABLE}."ORIGIN_AIRPORT" ;;
@@ -74,10 +82,27 @@ view: report_groups_by_suppliers {
     sql:${num_billed_groups} ;;
   }
 
+  measure: GBV_USD_measure {
+    type: sum
+    sql:${GBV_USD} ;;
+  }
+
+  measure: REVENUE_USD_measure {
+    type: sum
+    sql:${REVENUE_USD} ;;
+  }
+
+
   measure: seach_to_bill {
     type: number
     sql:sum(${num_billed_groups_measure})/sum(${num_results_measure}) ;;
   }
+
+  measure: Search_to_GBV {
+    type: number
+    sql:sum(${REVENUE_USD})/sum(${num_results_measure}) ;;
+  }
+
 
 
 # WoW Change Measure by supplier name
