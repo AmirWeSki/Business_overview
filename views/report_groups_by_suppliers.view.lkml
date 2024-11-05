@@ -80,8 +80,8 @@ view: report_groups_by_suppliers {
   }
 
 
-# WoW Change Measure
-  measure: wow_results {
+# WoW Change Measure by supplier name
+  measure: wow_results_by_name {
     type: number
     sql:
     (SUM(${num_results_measure}) -
