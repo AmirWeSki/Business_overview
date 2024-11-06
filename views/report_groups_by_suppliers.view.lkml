@@ -105,6 +105,16 @@ view: report_groups_by_suppliers {
   }
 
 
+# YoY Change Measure by supplier name
+  measure: YoY_results_by_name {
+    type: number
+    sql:
+    (${num_results_measure} -
+    LAG(${num_results_measure}, 52) OVER (PARTITION BY ${name} ORDER BY ${search_week}))
+     / NULLIF(LAG(${num_results_measure}, 52) OVER (PARTITION BY ${name} ORDER BY ${search_week}), 0) ;;
+    value_format_name: "percent_2"
+  }
+
 
   measure: num_results_with_wow {
     type: string
