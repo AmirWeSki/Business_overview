@@ -92,6 +92,15 @@ view: report_groups_by_suppliers {
     sql:${REVENUE_USD} ;;
   }
 
+# Total WoW Results Change
+  measure: wow_results {
+    type: number
+    sql:
+    (${num_results_measure} -
+    LAG(${num_results_measure}, 1) OVER (ORDER BY ${search_week}))
+     / NULLIF(LAG(${num_results_measure}, 1) OVER (ORDER BY ${search_week}), 0) ;;
+    value_format_name: "percent_2"
+  }
 
 
 # WoW Change Measure by supplier name
