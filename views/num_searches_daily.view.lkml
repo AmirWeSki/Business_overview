@@ -8,20 +8,20 @@ view: num_searches_daily {
 
 
 
-  dimension: num_daily_searches {
+  dimension: num_daily_searches_dim {
     type: number
     sql:  ${TABLE}."NUM_DAILY_SEARCHES" ;;
   }
 
-  measure: daily_searches_measure {
-    type: sum
-    sql:   ${num_daily_searches};;
+  measure: daily_searches {
+    type: number
+    sql:   ${num_daily_searches_dim};;
   }
 
-  measure: daily_searches_measure_2 {
-    type: sum
-    sql:   ${num_daily_searches};;
-  }
+#  measure: daily_searches_measure_2 {
+#    type: sum
+#    sql:   ${num_daily_searches};;
+#  }
 
 
   dimension_group: search {
