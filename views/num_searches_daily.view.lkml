@@ -22,19 +22,14 @@ view: num_searches_daily {
     sql:   ${num_daily_searches_dim};;
   }
 
-#  measure: daily_searches_measure_2 {
-#    type: sum
-#    sql:   ${num_daily_searches};;
-#  }
-
-# Total WoW searches Change
-  measure: wow_searches {
+  dimension: weekly_searches_dim {
     type: number
-    sql:
-    (${daily_searches} -
-    LAG(${daily_searches}, 1) OVER (ORDER BY ${search_week}))
-     / NULLIF(LAG(${daily_searches}, 1) OVER (ORDER BY ${search_date_id}), 0) ;;
-    value_format_name: "percent_2"
+    sql:  ${TABLE}."weekly_searches" ;;
+  }
+
+  measure: weekly_searches {
+    type: average
+    sql:   ${weekly_searches_dim};;
   }
 
 
