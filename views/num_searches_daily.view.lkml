@@ -12,7 +12,7 @@ view: num_searches_daily {
 
   measure: daily_searches_sum {
     type: sum
-    sql:  ${num_daily_searches} ;;
+    sql:   ${TABLE}."NUM_DAILY_SEARCHES";;
   }
 
 
