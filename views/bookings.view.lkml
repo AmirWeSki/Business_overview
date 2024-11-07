@@ -149,4 +149,8 @@ view: bookings {
     type: count
     drill_fields: [booking_id, search_ski_site_name]
   }
+  measure: avg_acc_rating {
+    type: average
+    sql: ${TABLE}."ACC_RATING" ;;
+  }
 }
