@@ -3,7 +3,7 @@ view: num_searches_daily {
 
   dimension: num_daily_searches_dim {
     type: number
-    sql: ${TABLE}."num_daily_searches" ;;
+    sql: ${TABLE}."NUM_DAILY_SEARCHES" ;;
 }
   measure: num_daily_searches {
     type: sum
