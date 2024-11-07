@@ -23,6 +23,16 @@ view: num_searches_daily {
 #    sql:   ${num_daily_searches};;
 #  }
 
+# Total WoW searches Change
+  measure: wow_searches {
+    type: number
+    sql:
+    (${daily_searches} -
+    LAG(${daily_searches}, 1) OVER (ORDER BY ${search_week}))
+     / NULLIF(LAG(${daily_searches}, 1) OVER (ORDER BY ${search_week}), 0) ;;
+    value_format_name: "percent_2"
+  }
+
 
   dimension_group: search {
     type: time
