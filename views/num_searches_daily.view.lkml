@@ -33,6 +33,17 @@ view: num_searches_daily {
   }
 
 
+  dimension: Total_weekly_SEARCHES_WOW_dim {
+    type: number
+    sql:  ${TABLE}."WEEKLY_SEARCHES_WOW_CHANGE" ;;
+  }
+
+  measure: total_weekly_searches_wow {
+    type: average
+    sql:   ${Total_weekly_SEARCHES_WOW_dim};;
+  }
+
+
   dimension_group: search {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
