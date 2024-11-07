@@ -14,7 +14,7 @@ view: num_searches_daily {
   }
 
   measure: daily_searches {
-    type: number
+    type: sum
     sql:   ${num_daily_searches_dim};;
   }
 
