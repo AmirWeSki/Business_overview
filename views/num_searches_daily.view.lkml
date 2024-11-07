@@ -6,7 +6,11 @@ view: num_searches_daily {
 #    sql: ${TABLE}."NUM_DAILY_SEARCHES" ;;
 #}
 
-
+  dimension: search_date_id {
+    type: date
+    sql: ${TABLE}."SEARCH_DATE" ;;
+    primary_key: yes
+  }
 
   dimension: num_daily_searches_dim {
     type: number
