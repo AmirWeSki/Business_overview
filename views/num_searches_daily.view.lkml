@@ -6,10 +6,6 @@ view: num_searches_daily {
 #    sql: ${TABLE}."NUM_DAILY_SEARCHES" ;;
 #}
 
-  dimension: num_results {
-    type: number
-    sql: ${TABLE}."NUM_RESULTS" ;;
-  }
 
 
   dimension: num_daily_searches {
@@ -17,7 +13,7 @@ view: num_searches_daily {
     sql:  ${TABLE}."NUM_DAILY_SEARCHES" ;;
   }
 
-  measure: daily_searches_sum {
+  measure: daily_searches_measure {
     type: sum
     sql:   ${num_daily_searches};;
   }
