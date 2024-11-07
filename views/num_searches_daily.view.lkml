@@ -1,13 +1,13 @@
 view: num_searches_daily {
   sql_table_name: "DWH"."NUM_SEARCHES_DAILY" ;;
 
-  dimension: num_daily_searches_dim {
-    type: number
-    sql: ${TABLE}."NUM_DAILY_SEARCHES" ;;
-}
+#  dimension: num_daily_searches_dim {
+#    type: number
+#    sql: ${TABLE}."NUM_DAILY_SEARCHES" ;;
+#}
   measure: num_daily_searches {
-    type: sum
-    sql: ${num_daily_searches} ;;
+    type: number
+    sql:  ${TABLE}."NUM_DAILY_SEARCHES" ;;
   }
   dimension_group: search {
     type: time
