@@ -24,7 +24,7 @@ view: num_searches_daily {
 
   dimension: weekly_searches_dim {
     type: number
-    sql:  ${TABLE}."weekly_searches" ;;
+    sql:  ${TABLE}."WEEKLY_SEARCHES" ;;
   }
 
   measure: weekly_searches {
