@@ -14,7 +14,7 @@ explore: report_groups_by_suppliers {
   label: " Search results"
   join:  : num_searches_daily {
     type: left_outer
-    sql_on: ${report_groups_by_suppliers.search_date} = ${num_searches_daily.search_date}} ;;
+    sql_on: ${report_groups_by_suppliers.search_date} = ${num_searches_daily.search_date} ;;
     relationship: many_to_one
   }
 
