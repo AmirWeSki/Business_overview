@@ -33,7 +33,7 @@ view: num_searches_daily {
     sql:
     (${daily_searches} -
     LAG(${daily_searches}, 1) OVER (ORDER BY ${search_week}))
-     / NULLIF(LAG(${daily_searches}, 1) OVER (ORDER BY ${search_week}), 0) ;;
+     / NULLIF(LAG(${daily_searches}, 1) OVER (ORDER BY ${search_date_id}), 0) ;;
     value_format_name: "percent_2"
   }
 
