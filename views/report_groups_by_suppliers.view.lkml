@@ -110,7 +110,7 @@ view: report_groups_by_suppliers {
     (${num_results_measure} -
     LAG(${num_results_measure}, 1) OVER (PARTITION BY ${name} ORDER BY ${search_week}))
      / NULLIF(LAG(${num_results_measure}, 1) OVER (PARTITION BY ${name} ORDER BY ${search_week}), 0) ;;
-    value_format_name: "percent_2"
+    value_format_name: "percent_0"
   }
 
 
