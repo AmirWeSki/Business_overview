@@ -18,6 +18,11 @@ view: num_searches_daily {
     sql:   ${num_daily_searches};;
   }
 
+  measure: daily_searches_measure_2 {
+    type: number
+    sql:   ${num_daily_searches};;
+  }
+
 
   dimension_group: search {
     type: time
