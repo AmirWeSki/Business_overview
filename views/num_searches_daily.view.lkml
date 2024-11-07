@@ -5,10 +5,17 @@ view: num_searches_daily {
 #    type: number
 #    sql: ${TABLE}."NUM_DAILY_SEARCHES" ;;
 #}
-  measure: num_daily_searches {
+  dimension: num_daily_searches {
     type: number
     sql:  ${TABLE}."NUM_DAILY_SEARCHES" ;;
   }
+
+  measure: daily_searches_sum {
+    type: sum
+    sql:  ${num_daily_searches} ;;
+  }
+
+
   dimension_group: search {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
