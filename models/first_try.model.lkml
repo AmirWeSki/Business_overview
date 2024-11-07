@@ -12,6 +12,11 @@ persist_with: first_try_default_datagroup
 
 explore: report_groups_by_suppliers {
   label: " Search results"
+  join:  : num_searches_per_week {
+    type: left_outer
+    sql_on: ${report_groups_by_suppliers.search_date} = ${num_searches_per_week.search_week_date}} ;;
+    relationship: many_to_one
+  }
 
 # test
 }
