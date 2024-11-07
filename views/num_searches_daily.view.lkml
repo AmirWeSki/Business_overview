@@ -36,13 +36,14 @@ view: num_searches_daily {
   dimension: Total_weekly_SEARCHES_WOW_dim {
     type: number
     sql:  ${TABLE}."WEEKLY_SEARCHES_WOW_CHANGE" ;;
-    value_format_name: "percent_0"
 
   }
 
   measure: total_weekly_searches_wow {
     type: average
     sql:   ${Total_weekly_SEARCHES_WOW_dim};;
+    value_format_name: "percent_0"
+
   }
 
 
