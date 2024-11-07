@@ -13,5 +13,5 @@ persist_with: first_try_default_datagroup
 explore: report_groups_by_suppliers {
   label: " Search results"
 
-
+# test
 }
