@@ -153,4 +153,14 @@ view: bookings {
     type: average
     sql: ${TABLE}."ACC_RATING" ;;
   }
+
+  measure: acc_supplier_count {
+    type: sum
+    sql: ${TABLE}."ACC_SUPPLIER" ;;
+  }
+
+  measure: search_ski_site_name_count {
+    type: sum
+    sql: ${TABLE}."SEARCH_SKI_SITE_NAME" ;;
+  }
 }
