@@ -1,6 +1,12 @@
 view: searches_by_resort {
   sql_table_name: "DWH"."SEARCHES_BY_RESORT" ;;
 
+  dimension: search_date_id {
+    type: date
+    sql: ${TABLE}."SEARCH_DATE" ;;
+    primary_key: yes
+  }
+
   dimension: num_daily_searches {
     type: number
     sql: ${TABLE}."NUM_DAILY_SEARCHES" ;;
