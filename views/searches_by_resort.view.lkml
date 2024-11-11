@@ -11,6 +11,15 @@ view: searches_by_resort {
     type: number
     sql: ${TABLE}."NUM_DAILY_SEARCHES" ;;
   }
+
+
+  measure: searches {
+    type: sum
+    sql:${num_daily_searches} ;;
+  }
+
+
+
   dimension: prev_week_searches_by_resort {
     type: number
     sql: ${TABLE}."PREV_WEEK_SEARCHES_BY_RESORT" ;;
@@ -52,6 +61,8 @@ view: searches_by_resort {
     value_format_name: "percent_0"
 
   }
+
+
 
   measure: count {
     type: count
