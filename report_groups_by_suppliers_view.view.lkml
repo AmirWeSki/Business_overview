@@ -47,9 +47,60 @@ dimension_group: date_to {
       sql: ${TABLE}."NUM_RESULTS" ;;
     }
 
-    measure: results {
+    measure: Results {
       type: sum
       sql:${num_results_dim} ;;
     }
+
+    dimension: num_groups_dim {
+      type: number
+      sql: ${TABLE}."NUM_GROUPS" ;;
+    }
+
+    measure: Groups {
+      type: sum
+      sql:${num_groups_dim} ;;
+    }
+
+    dimension: num_billed_groups_dim {
+      type: number
+      sql: ${TABLE}."NUM_BILLED_GROUPS" ;;
+    }
+
+    measure: Billed_Groups {
+      type: sum
+      sql:${num_billed_groups_dim} ;;
+    }
+
+    dimension: GBV_USD_dim {
+      type: number
+      sql: ${TABLE}."GBV_USD" ;;
+    }
+
+    measure: GBV_USD {
+      type: sum
+      sql:${GBV_USD_dim} ;;
+    }
+
+    dimension: REVENUE_USD_dim {
+      type: number
+      sql: ${TABLE}."REVENUE_USD" ;;
+    }
+
+    measure: REVENUE_USD {
+      type: sum
+      sql:${REVENUE_USD_dim} ;;
+    }
+
+# WoW Change Measure by supplier name
+    measure: wow_results_by_name {
+      type: number
+      sql:
+          (${Results} -
+          LAG(${Results}, 1) OVER (PARTITION BY ${Resort} ORDER BY ${search_week}))
+           / NULLIF(LAG(${Results}, 1) OVER (PARTITION BY ${Resort} ORDER BY ${search_week}), 0) ;;
+      value_format_name: "percent_0"
+    }
+
 
 }
