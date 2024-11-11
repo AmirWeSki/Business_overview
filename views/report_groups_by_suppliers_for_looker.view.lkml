@@ -4,8 +4,7 @@
   #
 
   view: report_groups_by_suppliers_for_looker {
-    sql_table_name: "dwh.report_groups_by_suppliers_for_looker";;
-
+    sql_table_name: dwh.report_groups_by_suppliers_for_looker;;
 
     dimension_group: date_from {
       type: time
