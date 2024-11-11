@@ -32,4 +32,24 @@ dimension_group: date_to {
       sql: ${TABLE}."SEARCH_DATE" ;;
     }
 
+    dimension: Resort {
+      type: string
+      sql: ${TABLE}."SKI_SITE" ;;
+    }
+
+    dimension: Supplier {
+      type: string
+      sql: ${TABLE}."NAME" ;;
+    }
+
+    dimension: num_results_dim {
+      type: number
+      sql: ${TABLE}."NUM_RESULTS" ;;
+    }
+
+    measure: results {
+      type: sum
+      sql:${num_results_dim} ;;
+    }
+
 }
