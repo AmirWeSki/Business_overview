@@ -20,7 +20,7 @@ explore: report_groups_by_suppliers {
 
 join: searches_by_resort { # joining to be able to compare to WoW per resort
   type: left_outer
-  sql_on: ${report_groups_by_suppliers.search_date} = ${searches_by_resort.search_date_id} ;;
+  sql_on: ${report_groups_by_suppliers.search_date} = ${searches_by_resort.search_date_id} and ${report_groups_by_suppliers.ski_site} = ${searches_by_resort.resort};;
   relationship: many_to_one  # Adjust the relationship as necessary
 }
 
