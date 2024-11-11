@@ -3,8 +3,8 @@
   # sql_table_name: my_schema_name.tester ;;
   #
 
-  view: snowflake_view {
-    sql_table_name: "dwh.report_groups_by_suppliers_view";;
+  view: report_groups_by_suppliers_for_looker {
+    sql_table_name: "dwh.report_groups_by_suppliers_for_looker";;
 
 
     dimension_group: date_from {
