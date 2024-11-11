@@ -45,6 +45,14 @@ view: searches_by_resort {
     type: number
     sql: ${TABLE}."WEEKLY_SEARCHES_WOW_CHANGE_BY_RESORT" ;;
   }
+
+  measure: wow_searches_by_resort {
+    type: average
+    sql:   ${weekly_searches_wow_change_by_resort};;
+    value_format_name: "percent_0"
+
+  }
+
   measure: count {
     type: count
   }
