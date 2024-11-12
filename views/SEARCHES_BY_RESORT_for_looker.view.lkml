@@ -9,6 +9,7 @@
         primary_key: yes
       }
 
+
       dimension: num_daily_searches_dim {
         type: number
         sql: ${TABLE}."NUM_DAILY_SEARCHES" ;;

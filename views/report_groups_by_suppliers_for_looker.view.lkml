@@ -36,6 +36,12 @@ dimension_group: date_to {
       sql: ${TABLE}."SKI_SITE" ;;
     }
 
+
+    dimension: Component {
+      type: string
+      sql: ${TABLE}."COMPONENT" ;;
+    }
+
     dimension: Supplier {
       type: string
       sql: ${TABLE}."NAME" ;;
