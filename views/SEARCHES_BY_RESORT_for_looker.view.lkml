@@ -57,11 +57,20 @@
         sql: ${TABLE}."WEEKLY_SEARCHES_WOW_CHANGE_BY_RESORT" ;;
       }
 
-      measure: wow_searches_by_resort {
-        type: average
-        sql:   ${weekly_searches_wow_change_by_resort_dim};;
-        value_format_name: "percent_0"
+# Total WoW searches Change
+    measure: wow_searches {
+      type: number
+      sql:
+          (${searches} -
+          LAG(${searches}, 1) OVER (ORDER BY ${search_week}))
+           / NULLIF(LAG(${searches}, 1) OVER (ORDER BY ${search_week}), 0) ;;
+      value_format_name: "percent_2"
+    }
 
-      }
+#      measure: wow_searches_by_resort {
+#        type: average
+#        sql:   ${weekly_searches_wow_change_by_resort_dim};;
+#        value_format_name: "percent_0"
+#      }
 
 }
