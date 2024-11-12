@@ -37,6 +37,15 @@ view: report_suppliers_search_results {
     sql:${num_results_dim} ;;
   }
 
+# WoW results by supplier and resort
+  measure: wow_results_by_supplier_resort {
+    type: number
+    sql:
+          (${Results} -
+          LAG(${Results}, 1) OVER (partition by ${Supplier}, ${Resort} ORDER BY ${search_week}))
+           / NULLIF(LAG(${Results}, 1) OVER (partition by ${Supplier}, ${Resort} ORDER BY ${search_week}), 0) ;;
+    value_format_name: "percent_0"
+  }
 
 
   dimension_group: search {
@@ -54,5 +63,7 @@ view: report_suppliers_search_results {
     type: string
     sql: ${TABLE}."SUPPLIER" ;;
   }
+
+
 
 }
