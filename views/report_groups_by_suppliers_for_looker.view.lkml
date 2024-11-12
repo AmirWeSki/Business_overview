@@ -98,7 +98,7 @@ dimension_group: date_to {
     }
 
 # WoW Change Measure by supplier name
-    measure: wow_results_by_name {
+    measure: wow_results_by_resort {
       type: number
       sql:
           (${Results} -
