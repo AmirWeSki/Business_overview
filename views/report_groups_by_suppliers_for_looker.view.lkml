@@ -102,8 +102,8 @@ dimension_group: date_to {
       type: number
       sql:
           (${Results} -
-          LAG(${Results}, 1) OVER (PARTITION BY ${Resort} ORDER BY ${search_week}))
-           / NULLIF(LAG(${Results}, 1) OVER (PARTITION BY ${Resort} ORDER BY ${search_week}), 0) ;;
+          LAG(${Results}, 1) OVER (ORDER BY ${search_week}))
+           / NULLIF(LAG(${Results}, 1) OVER (ORDER BY ${search_week}), 0) ;;
       value_format_name: "percent_0"
     }
 
