@@ -38,5 +38,15 @@ view: report_visitors_per_day {
     sql:${visitors_searched_dim} ;;
   }
 
+# wow_visitors_searched
+  measure: wow_visitors_searched {
+    type: number
+    sql:
+    (${visitors_searched} -
+    LAG(${visitors_searched}, 1) OVER (ORDER BY ${search_week}))
+     / NULLIF(LAG(${visitors_searched}, 1) OVER (ORDER BY ${search_week}), 0) ;;
+    value_format_name: "percent_0"
+  }
+
 
 }
