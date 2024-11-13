@@ -11,9 +11,6 @@ datagroup: supply_side_business {
   max_cache_age: "1 hour"
 }
 
-explore: report_groups_by_suppliers_for_looker {
-  label: "Supplier performance"
-}
 
 explore: SEARCHES_BY_RESORT_for_looker {
   view_name: searches_by_resort_for_looker
