@@ -36,7 +36,7 @@
       sql: ${TABLE}."RESORT_NAME" ;;
     }
 
-    dimension: Destination_searched_for {
+    dimension: Search_destination {
       type: string
       sql: ${TABLE}."SEARCHED_FOR" ;;
     }
