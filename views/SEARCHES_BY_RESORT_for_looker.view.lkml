@@ -70,13 +70,13 @@
       }
 
 # Total WoW searches Change
-    measure: wow_searches {
+    measure: wow_searches_by_destination {
       type: number
       sql:
           (${searches} -
-          LAG(${searches}, 1) OVER (ORDER BY ${search_week}))
-           / NULLIF(LAG(${searches}, 1) OVER (ORDER BY ${search_week}), 0) ;;
-      value_format_name: "percent_2"
+          LAG(${searches}, 1) OVER (partition by ${Search_destination}  ORDER BY ${search_week}))
+           / NULLIF(LAG(${searches}, 1) OVER (partition by ${Search_destination} ORDER BY ${search_week}), 0) ;;
+      value_format_name: "percent_0"
     }
 
 #      measure: wow_searches_by_resort {
