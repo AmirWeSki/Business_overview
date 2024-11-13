@@ -26,10 +26,22 @@
         type: number
         sql: ${TABLE}."PREV_WEEK_SEARCHES_BY_RESORT" ;;
       }
-      dimension: Resort {
+      dimension: Resort_id {
         type: string
-        sql: ${TABLE}."RESORT" ;;
+        sql: ${TABLE}."RESORT_ID" ;;
       }
+
+    dimension: Resort {
+      type: string
+      sql: ${TABLE}."RESORT_NAME" ;;
+    }
+
+    dimension: Destination_searched_for {
+      type: string
+      sql: ${TABLE}."SEARCHED_FOR" ;;
+    }
+
+
       dimension_group: search {
         type: time
         timeframes: [raw, date, week, month, quarter, year]
