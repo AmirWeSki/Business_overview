@@ -27,5 +27,10 @@ explore: report_visitors_per_day {
 
 explore: report_suppliers_search_results {
   view_name: report_suppliers_search_results
-  label: "Suppliers Search Results"
+  label: "Suppliers Search Results_old"
+}
+
+explore: report_supplier_performance {
+  view_name: report_supplier_performance
+  label: "Suppliers Performance and Search Results"
 }
