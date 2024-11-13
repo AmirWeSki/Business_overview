@@ -107,13 +107,13 @@ view: report_supplier_performance {
     sql:${REVENUE_USD_dim} ;;
   }
 
-# WoW Change Measure by supplier name
-  measure: wow_results_by_supplier_resort {
+# WoW Change Measure by supplier and search destination
+  measure: wow_results_by_supplier_search_destination {
     type: number
     sql:
           (${Results} -
-          LAG(${Results}, 1) OVER (partition by ${Supplier}, ${Resort} ORDER BY ${search_week}))
-           / NULLIF(LAG(${Results}, 1) OVER (partition by ${Supplier}, ${Resort} ORDER BY ${search_week}), 0) ;;
+          LAG(${Results}, 1) OVER (partition by ${Supplier}, ${Search_destination} ORDER BY ${search_week}))
+           / NULLIF(LAG(${Results}, 1) OVER (partition by ${Supplier}, ${Search_destination} ORDER BY ${search_week}), 0) ;;
     value_format_name: "percent_0"
   }
 
