@@ -117,7 +117,15 @@ view: report_supplier_performance {
     value_format_name: "percent_0"
   }
 
-
+# WoW Change Measure by supplier
+  measure: wow_results_by_supplier {
+    type: number
+    sql:
+          (${Results} -
+          LAG(${Results}, 1) OVER (partition by ${Supplier} ORDER BY ${search_week}))
+           / NULLIF(LAG(${Results}, 1) OVER (partition by ${Supplier} ORDER BY ${search_week}), 0) ;;
+    value_format_name: "percent_0"
+  }
   measure: count {
     type: count
   }
