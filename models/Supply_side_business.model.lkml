@@ -17,10 +17,6 @@ explore: SEARCHES_BY_RESORT_for_looker {
   label: "Searches by resort"
 }
 
-explore: report_visitors_per_day {
-  view_name: report_visitors_per_day
-  label: "Visitors"
-}
 
 explore: report_suppliers_search_results {
   view_name: report_suppliers_search_results
