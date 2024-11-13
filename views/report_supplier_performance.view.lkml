@@ -126,7 +126,21 @@ view: report_supplier_performance {
            / NULLIF(LAG(${Results}, 1) OVER (partition by ${Supplier} ORDER BY ${search_week}), 0) ;;
     value_format_name: "percent_0"
   }
-  measure: count {
-    type: count
+
+
+
+  measure: total_results_per_destination_week {
+    type: sum
+    sql: ${Results} ;;
+    drill_fields: [Search_destination , search_week]
+    }
+
+  measure: supplier_percentage {
+    type: number
+    sql: ${Results} / NULLIF(${total_results_per_destination_week}, 0) ;;
+    value_format_name: "percent_0"
   }
+
+
+
 }
