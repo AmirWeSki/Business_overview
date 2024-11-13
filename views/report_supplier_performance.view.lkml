@@ -137,5 +137,15 @@ view: report_supplier_performance {
     value_format_name: "percent_0"
   }
 
+# wow_percentage_by_supplier_destination
+  measure: wow_percentage_by_supplier_destination {
+    type: number
+    sql:
+          (${supplier_results_destination_percentage} -
+          LAG(${supplier_results_destination_percentage}, 1) OVER (partition by ${Supplier}, ${Search_destination} ORDER BY ${search_week})) ;;
+    value_format_name: "percent_0"
+  }
+
+
 
 }
