@@ -19,13 +19,28 @@ view: report_supplier_performance {
     datatype: date
     sql: ${TABLE}."DATE_TO" ;;
   }
-  dimension: destination_resort_id {
-    type: number
-    sql: ${TABLE}."DESTINATION_SITE_ID" ;;
+
+  dimension: Resort_id {
+    type: string
+    sql: ${TABLE}."RESORT_ID" ;;
   }
+
+
+
+  dimension: Resort {
+    type: string
+    sql: ${TABLE}."RESORT_NAME" ;;
+  }
+
+  dimension: Search_destination {
+    type: string
+    sql: ${TABLE}."SEARCHED_FOR" ;;
+  }
+
+
   dimension: Search_type {
     type: string
-    sql: ${TABLE}."DESTINATION_TYPE" ;;
+    sql: ${TABLE}."Search_type" ;;
   }
   dimension: GBV_USD_dim {
     type: number
@@ -63,6 +78,8 @@ view: report_supplier_performance {
   }
 
 
+
+
   dimension: REVENUE_USD_dim {
     type: number
     sql: ${TABLE}."REVENUE_USD" ;;
@@ -74,10 +91,7 @@ view: report_supplier_performance {
     datatype: date
     sql: ${TABLE}."SEARCH_DATE" ;;
   }
-  dimension: Resort {
-    type: string
-    sql: ${TABLE}."SKI_SITE" ;;
-  }
+
   dimension: Supplier {
     type: string
     sql: ${TABLE}."SUPPLIER" ;;
