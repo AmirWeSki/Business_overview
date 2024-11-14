@@ -18,7 +18,19 @@ explore: SEARCHES_BY_RESORT_for_looker {
 }
 
 
-explore: report_supplier_performance {
-  view_name: report_supplier_performance
-  label: "Suppliers Performance and Search Results"
-}
+
+#explore: report_supplier_performance {
+#  view_name: report_supplier_performance
+#  label: "Suppliers Performance and Search Results"
+#}
+
+#explore: report_supplier_performance {
+#  join: WoW_percentage_for_supplier_perf {
+#    sql_on: ${report_supplier_performance.supplier} = ${WoW_percentage_for_supplier_perf.supplier}
+#             AND ${report_supplier_performance.search_destination} = ${WoW_percentage_for_supplier_perf.search_destination}
+#             AND ${report_supplier_performance.search_week} = ${WoW_percentage_for_supplier_perf.search_week} ;;
+#    relationship: many_to_one
+#    type: left_outer
+#
+#  }
+#}
