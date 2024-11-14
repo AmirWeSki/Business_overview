@@ -31,7 +31,7 @@ explore: report_supplier_performance {
   join: wow_percentage_for_supplier_perf { # Joining wow_percentage_for_supplier_perf within the same Explore
     sql_on: ${report_supplier_performance.Supplier} = ${wow_percentage_for_supplier_perf.supplier}
              AND ${report_supplier_performance.Search_destination} = ${wow_percentage_for_supplier_perf.search_destination}
-             AND ${report_supplier_performance.search_week}} = ${wow_percentage_for_supplier_perf.search_week} ;;
+             AND ${report_supplier_performance.search_week} = ${wow_percentage_for_supplier_perf.search_week} ;;
     relationship: many_to_one
     type: left_outer
   }
