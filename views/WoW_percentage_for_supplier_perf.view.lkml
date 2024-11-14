@@ -35,16 +35,16 @@ view: wow_percentage_for_supplier_perf {
     }
 
 
-measure: wow_supplier_results_destination_percentage {
-  type: number
-  sql:
-    (${supplier_results_destination_percentage} -
-    LAG(${supplier_results_destination_percentage}, 1)
-    OVER (PARTITION BY ${supplier}, ${search_destination} ORDER BY ${search_week}))
-    / NULLIF(LAG(${supplier_results_destination_percentage}, 1)
-    OVER (PARTITION BY ${supplier}, ${search_destination} ORDER BY ${search_week}), 0) ;;
-  value_format_name: "percent_0"
-  label: "WoW Change in Supplier Results Destination %"
-
-}
+#measure: wow_supplier_results_destination_percentage {
+#  type: number
+#  sql:
+#    (${supplier_results_destination_percentage} -
+#    LAG(${supplier_results_destination_percentage}, 1)
+#    OVER (PARTITION BY ${supplier}, ${search_destination} ORDER BY ${search_week}))
+#    / NULLIF(LAG(${supplier_results_destination_percentage}, 1)
+#    OVER (PARTITION BY ${supplier}, ${search_destination} ORDER BY ${search_week}), 0) ;;
+#  value_format_name: "percent_0"
+#  label: "WoW Change in Supplier Results Destination %"
+#
+#}
 }
