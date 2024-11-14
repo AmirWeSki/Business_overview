@@ -134,7 +134,7 @@ measure: supplier_results_destination_percentage {
   sql:
         sum(${Results}) OVER (partition by ${Supplier}, ${Search_destination} ORDER BY ${search_week})/
         sum(${Results}) OVER (partition by ${Search_destination} ORDER BY ${search_week}) ;;
-  value_format_name: "percent_0"
+  value_format_name: "percent_2"
 }
 
  #WoW Change for supplier_results_destination_percentage
