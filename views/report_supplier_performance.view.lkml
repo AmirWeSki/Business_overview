@@ -40,7 +40,7 @@ view: report_supplier_performance {
 
   dimension: Search_type {
     type: string
-    sql: ${TABLE}."Search_type" ;;
+    sql: ${TABLE}."search_type" ;;
   }
   dimension: GBV_USD_dim {
     type: number
