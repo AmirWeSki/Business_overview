@@ -100,11 +100,15 @@ view: report_supplier_performance {
   measure: GBV_USD {
     type: sum
     sql:${GBV_USD_dim} ;;
+    value_format: "$#,##0"
+
   }
 
   measure: REVENUE_USD {
     type: sum
     sql:${REVENUE_USD_dim} ;;
+    value_format: "$#,##0"
+
   }
 
 # WoW Change Measure by supplier and search destination
