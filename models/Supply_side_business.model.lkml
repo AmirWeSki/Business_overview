@@ -23,9 +23,9 @@ explore: report_supplier_performance {
   view_name: report_supplier_performance
   label: "Suppliers Performance and Search Results"
 #join: searches_by_resort { # joining to be able to compare to WoW per resort
-#  type: left_outer
+ # type: left_outer
 #  sql_on: ${report_supplier_performance.search_date} = ${searches_by_resort.search_date_id} and ${report_supplier_performance.SEARCHED_FOR} = ${searches_by_resort.SEARCHED_FOR};;
-#  relationship: many_to_one # Adjust the relationship as necessary
+ # relationship: many_to_one # Adjust the relationship as necessary
 
 #}
 }

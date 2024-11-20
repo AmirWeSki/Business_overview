@@ -12,6 +12,12 @@ view: searches_by_resort {
     sql: ${TABLE}."NUM_DAILY_SEARCHES" ;;
   }
 
+  dimension: Destination {
+    type: string
+    sql: ${TABLE}."SEARCHED_FOR" ;;
+  }
+
+
 
   measure: searches {
     type: sum
