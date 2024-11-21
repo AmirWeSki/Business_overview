@@ -12,8 +12,8 @@ datagroup: supply_side_business {
 }
 
 
-explore: SEARCHES_BY_RESORT_for_looker {
-  view_name: searches_by_resort_for_looker
+explore: SEARCHES_BY_RESORT {
+  view_name: searches_by_resort
   label: "Searches by resort"
 }
 
