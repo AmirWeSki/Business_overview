@@ -17,13 +17,6 @@ explore: SEARCHES_BY_RESORT {
   label: "Searches by resort"
 }
 
-
-
-explore: report_supplier_performance {
-  view_name: report_supplier_performance
-  label: "Suppliers Performance and Search Results old"
-  }
-
 explore:  supplier_search_results_and_bookings {
   view_name: supplier_search_results_and_bookings
   label: "Suppliers Performance and Search Results"
