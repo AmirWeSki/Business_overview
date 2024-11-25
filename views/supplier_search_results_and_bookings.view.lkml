@@ -35,6 +35,11 @@ view: supplier_search_results_and_bookings {
     type: number
     sql: ${TABLE}."NUM_GROUPS" ;;
   }
+
+  dimension: num_billed_groups {
+    type: number
+    sql: ${TABLE}."NUM_BILLED_GROUPS" ;;
+  }
   dimension: num_results {
     type: number
     sql: ${TABLE}."NUM_RESULTS" ;;
@@ -83,7 +88,7 @@ view: supplier_search_results_and_bookings {
 
   measure: Billed_groups {
     type: sum
-    sql:${num_results} ;;
+    sql:${num_billed_groups} ;;
   }
 
   measure: GBV_USD {
