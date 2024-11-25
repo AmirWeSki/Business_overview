@@ -96,4 +96,33 @@ view: supplier_search_results_and_bookings {
     sql:${revenue_usd_dim} ;;
   }
 
+# WoW Change Measure by supplier and search destination
+  measure: wow_results_by_supplier_search_destination {
+    type: number
+    sql:
+          (${Results} -
+          LAG(${Results}, 1) OVER (partition by ${supplier}, ${destination} ORDER BY ${search_week}))
+           / NULLIF(LAG(${Results}, 1) OVER (partition by ${supplier}, ${destination} ORDER BY ${search_week}), 0) ;;
+    value_format_name: "percent_0"
+  }
+
+# WoW Change Measure by supplier
+  measure: wow_results_by_supplier {
+    type: number
+    sql:
+          (${Results} -
+          LAG(${Results}, 1) OVER (partition by ${supplier} ORDER BY ${search_week}))
+           / NULLIF(LAG(${Results}, 1) OVER (partition by ${supplier} ORDER BY ${search_week}), 0) ;;
+    value_format_name: "percent_0"
+  }
+
+
+# supplier_results_percentage out of destination
+  measure: supplier_results_destination_percentage {
+    type: number
+    sql:
+        sum(${Results}) OVER (partition by ${supplier}, ${destination} ORDER BY ${search_week})/
+        sum(${Results}) OVER (partition by ${destination} ORDER BY ${search_week}) ;;
+    value_format_name: "percent_2"
+  }
 }
