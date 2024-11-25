@@ -18,15 +18,15 @@ explore: SEARCHES_BY_RESORT {
 }
 
 explore:  supplier_search_results_and_bookings {
-  view_name: supplier_search_results_and_bookings
+  view_name:  supplier_search_results_and_bookings
   label: "Suppliers Performance and Search Results"
 
 
-#join: searches_by_resort { # joining to be able to compare to WoW per resort
-#  type: left_outer
-#  sql_on: ${report_supplier_performance.search_date} = ${searches_by_resort.search_date_id} and ${report_supplier_performance.Search_destination} = ${searches_by_resort.Destination};;
-#  relationship: many_to_one # Adjust the relationship as necessary
-#}
+join: searches_by_resort { # joining to be able to compare to WoW per resort
+  type: left_outer
+  sql_on: ${supplier_search_results_and_bookings.search_date} = ${searches_by_resort.search_date_id} and  ${supplier_search_results_and_bookings.destination} = ${searches_by_resort.Destination};;
+  relationship: many_to_one # Adjust the relationship as necessary
+}
 }
 
 #explore: report_supplier_performance {
