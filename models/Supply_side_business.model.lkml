@@ -21,7 +21,7 @@ explore: SEARCHES_BY_RESORT {
 
 explore: report_supplier_performance {
   view_name: report_supplier_performance
-  label: "Suppliers Performance and Search Results"
+  label: "Suppliers Performance and Search Results old"
   }
 
 explore:  supplier_search_results_and_bookings {
