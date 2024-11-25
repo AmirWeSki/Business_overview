@@ -70,4 +70,20 @@ view: supplier_search_results_and_bookings {
     type: count
     drill_fields: [resort_name]
   }
+
+  measure: Results {
+    type: sum
+    sql:${num_results} ;;
+  }
+
+  #measure: Groups {
+  #  type: sum
+  #  sql:${NUM_GROUPS} ;;
+  #}
+
+  #measure: Billed_groups {
+  #  type: sum
+  #  sql:${NUM_BILLED_GROUPS} ;;
+  #}
+
 }
