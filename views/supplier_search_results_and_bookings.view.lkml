@@ -27,7 +27,7 @@ view: supplier_search_results_and_bookings {
     type: string
     sql: ${TABLE}."DESTINATION" ;;
   }
-  dimension: gbv_usd {
+  dimension: gbv_usd_dim {
     type: number
     sql: ${TABLE}."GBV_USD" ;;
   }
@@ -47,7 +47,7 @@ view: supplier_search_results_and_bookings {
     type: string
     sql: ${TABLE}."RESORT_NAME" ;;
   }
-  dimension: revenue_usd {
+  dimension: revenue_usd_dim {
     type: number
     sql: ${TABLE}."REVENUE_USD" ;;
   }
@@ -76,14 +76,24 @@ view: supplier_search_results_and_bookings {
     sql:${num_results} ;;
   }
 
-  #measure: Groups {
-  #  type: sum
-  #  sql:${NUM_GROUPS} ;;
-  #}
+  measure: Groups {
+    type: sum
+    sql:${num_groups} ;;
+  }
 
-  #measure: Billed_groups {
-  #  type: sum
-  #  sql:${NUM_BILLED_GROUPS} ;;
-  #}
+  measure: Billed_groups {
+    type: sum
+    sql:${num_results} ;;
+  }
+
+  measure: GBV_USD {
+    type: sum
+    sql:${gbv_usd_dim} ;;
+  }
+
+  measure: Revenue_USD {
+    type: sum
+    sql:${revenue_usd_dim} ;;
+  }
 
 }
