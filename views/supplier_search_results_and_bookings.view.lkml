@@ -94,11 +94,15 @@ view: supplier_search_results_and_bookings {
   measure: GBV_USD {
     type: sum
     sql:${gbv_usd_dim} ;;
+    value_format: "$#,##0" # Displays values in dollar format
+
   }
 
   measure: Revenue_USD {
     type: sum
     sql:${revenue_usd_dim} ;;
+    value_format: "$#,##0" # Displays values in dollar format
+
   }
 
 # WoW Change Measure by supplier and search destination
