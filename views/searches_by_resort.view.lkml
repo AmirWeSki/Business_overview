@@ -52,9 +52,9 @@ view: searches_by_resort {
     datatype: date
     sql: ${TABLE}."WEEK_START_DATE" ;;
   }
-  dimension: weekly_searches {
+  dimension: weekly_searches_by_destination_dim {
     type: number
-    sql: ${TABLE}."WEEKLY_SEARCHES" ;;
+    sql: ${TABLE}."weekly_searches_by_destination" ;;
   }
   dimension: WEEKLY_SEARCHES_WOW_CHANGE_BY_DESTINATION_dim {
     type: number
@@ -68,6 +68,17 @@ view: searches_by_resort {
 
   }
 
+  dimension: weekly_searches_wow_change_dim {
+    type: number
+    sql: ${TABLE}."weekly_searches_wow_change" ;;
+  }
+
+  measure: wow_searches_total {
+    type: average
+    sql:   ${weekly_searches_wow_change_dim};;
+    value_format_name: "percent_0"
+
+  }
 
 
   measure: count {
