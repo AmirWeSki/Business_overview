@@ -54,7 +54,7 @@ view: searches_by_resort {
   }
   dimension: weekly_searches_by_destination_dim {
     type: number
-    sql: ${TABLE}."weekly_searches_by_destination" ;;
+    sql: ${TABLE}."WEEKLY_SEARCHES_BY_DESTINATION" ;;
   }
   dimension: WEEKLY_SEARCHES_WOW_CHANGE_BY_DESTINATION_dim {
     type: number
@@ -70,7 +70,7 @@ view: searches_by_resort {
 
   dimension: weekly_searches_wow_change_dim {
     type: number
-    sql: ${TABLE}."weekly_searches_wow_change" ;;
+    sql: ${TABLE}."WEEKLY_SEARCHES_WOW_CHANGE" ;;
   }
 
   measure: wow_searches_total {
