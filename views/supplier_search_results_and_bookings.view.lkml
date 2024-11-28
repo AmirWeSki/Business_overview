@@ -31,6 +31,12 @@ view: supplier_search_results_and_bookings {
     type: number
     sql: ${TABLE}."GBV_USD" ;;
   }
+
+  dimension: net_usd_dim {
+    type: number
+    sql: ${TABLE}."NET_USD" ;;
+  }
+
   dimension: num_groups {
     type: number
     sql: ${TABLE}."NUM_GROUPS" ;;
@@ -97,6 +103,14 @@ view: supplier_search_results_and_bookings {
     value_format: "$#,##0" # Displays values in dollar format
 
   }
+
+  measure: Net_USD {
+    type: sum
+    sql:${net_usd_dim} ;;
+    value_format: "$#,##0" # Displays values in dollar format
+
+  }
+
 
   measure: Revenue_USD {
     type: sum
