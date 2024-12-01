@@ -29,10 +29,10 @@ join: searches_by_resort { # joining to be able to compare to WoW per resort
 }
 }
 #
-#explore: API_results_alert_data {
-#  view_name: API_results_alert_data
-#  label: "API_results_alert_data"
-#}
+explore: api_results_alert_data {
+  view_name: api_results_alert_data
+  label: "api_results_alert_data"
+}
 
 #explore: report_supplier_performance {
 #explore: report_supplier_performance {
