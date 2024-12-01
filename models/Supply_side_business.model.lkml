@@ -28,7 +28,7 @@ join: searches_by_resort { # joining to be able to compare to WoW per resort
   relationship: many_to_one # Adjust the relationship as necessary
 }
 }
-
+#
 #explore: API_results_alert_data {
 #  view_name: API_results_alert_data
 #  label: "API_results_alert_data"
