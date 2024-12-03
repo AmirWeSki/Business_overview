@@ -34,22 +34,19 @@ view: api_results_alert_data {
 
   measure: wow_daily_results_change {
     type: sum
-    sql: ${TABLE}."wow_daily_results_change_dim" ;;
+    sql:${wow_daily_results_change_dim} ;;
     value_format_name: "percent_0"
+
+  }
+
+  measure: num_results_prev_week {
+    type: sum
+    sql:${num_daily_results_dim} ;;
 
   }
 
   measure: num_daily_results {
     type: sum
-    sql: ${TABLE}."num_daily_results_dim" ;;
-  }
-
-  measure: num_results_prev_week {
-    type: sum
-    sql: ${TABLE}."num_results_prev_week_dim" ;;
-  }
-
-  measure: count {
-    type: count
-  }
-}
+    sql:${num_results_prev_week_dim} ;;
+    }
+    }
