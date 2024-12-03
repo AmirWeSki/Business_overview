@@ -6,10 +6,10 @@ connection: "snowflake_dwh"
 include: "/views/**/*.view.lkml"
 #include: "/views/supplier_reports/**/*.view.lkml"
 
-#datagroup: supply_side_business {
+datagroup: supply_side_business {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
-#  max_cache_age: "1 hour"
-#}
+  max_cache_age: "1 hour"
+}
 
 
 explore: SEARCHES_BY_RESORT {
