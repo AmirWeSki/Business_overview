@@ -13,11 +13,11 @@ view: api_results_alert_data {
 
 
   dimension: num_daily_results_dim {
-    type: number
+    type: string
     sql: ${TABLE}."NUM_DAILY_RESULTS" ;;
   }
   dimension: num_results_prev_week_dim {
-    type: number
+    type: string
     sql: ${TABLE}."NUM_RESULTS_PREV_WEEK" ;;
   }
   dimension_group: search {
