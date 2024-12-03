@@ -5,6 +5,13 @@ view: api_results_alert_data {
     type: string
     sql: ${TABLE}."API_PROVIDER" ;;
   }
+
+  dimension: Supplier {
+    type: string
+    sql: ${TABLE}."SUPPLIER" ;;
+  }
+
+
   dimension: num_daily_results {
     type: number
     sql: ${TABLE}."NUM_DAILY_RESULTS" ;;
@@ -20,10 +27,18 @@ view: api_results_alert_data {
     datatype: date
     sql: ${TABLE}."SEARCH_DATE" ;;
   }
-  dimension: wow_daily_results_change {
+  dimension: wow_daily_results_change_dim {
     type: number
     sql: ${TABLE}."WOW_DAILY_RESULTS_CHANGE" ;;
   }
+
+  measure: wow_daily_results_change {
+    type: number
+    sql: ${TABLE}."wow_daily_results_change_dim" ;;
+    value_format_name: "percent_0"
+
+  }
+
   measure: count {
     type: count
   }
