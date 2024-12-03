@@ -41,12 +41,12 @@ view: api_results_alert_data {
 
   measure: num_results_prev_week {
     type: sum
-    sql:${num_daily_results_dim} ;;
+    sql:${num_results_prev_week_dim} ;;
 
   }
 
   measure: num_daily_results {
     type: sum
-    sql:${num_results_prev_week_dim} ;;
+    sql:${num_daily_results_dim} ;;
     }
     }
