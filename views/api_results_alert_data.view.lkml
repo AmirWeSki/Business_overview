@@ -11,6 +11,10 @@ view: api_results_alert_data {
     sql: ${TABLE}."SUPPLIER" ;;
   }
 
+  dimension: Component {
+    type: string
+    sql: ${TABLE}."COMPONENT" ;;
+  }
 
   dimension: num_daily_results_dim {
     type: number
